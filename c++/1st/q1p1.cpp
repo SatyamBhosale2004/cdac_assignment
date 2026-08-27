@@ -8,7 +8,7 @@ int main(){
     cin >> temp;
     double tempf = (temp*(9.0/5.0) + 32);//temp in fahreneit
     int sc;//statuscode
-    cout << left  << setw(15) << "Temperature" << ": " << temp << " / " << tempf << endl;
+    cout << left  << setw(15) << "Temperature" << ": " << temp << (char)248 <<  "C" << " / " << tempf << (char)248 << "F"<< endl;
     if(temp < 0){
         sc = -1;
     }else if(temp >= 0 && temp <=29){
@@ -44,9 +44,7 @@ int main(){
         default : 
             cout << "Invalid code";
             break;
-
-    (temp >= 25) ? cout << left << setw(15) << "Reading" << ":" << "Above Average" << endl : cout << setw(15) << "Reading" << ":" << "Below Average" << endl;
-
     }
+    (temp >= 25) ? cout << left << setw(15) << "Reading" << ":" << " Above Average" << endl : cout << setw(15) << "Reading" << ":" << " Below Average" << endl;
     return 0;
 }
