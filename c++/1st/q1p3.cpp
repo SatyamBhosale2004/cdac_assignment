@@ -25,6 +25,7 @@ double** reading(int &n){
         }
         cout << endl;
     }
+    
     return arr;
 }
 
@@ -87,4 +88,9 @@ int main(){
     double** arr = reading(n);
     hotr(arr,n);
     warn(arr,n);
+    for(int i =0; i < n ; i++){
+     delete[] arr[i];// here arr[i] which is row but is still a pointer should have value not *double or it will be adress in address
+    }
+    delete[] arr;
+    return 0;
 }
