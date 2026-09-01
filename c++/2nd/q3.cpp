@@ -82,8 +82,15 @@ namespace GameMath {
 
 }
 
+namespace Engine{
+    namespace Audio{
+        string playSound(string name){
+            return "Playing : " + name;  
+        }
+    }
+}
 
-
+int level = 1;
 int main(){
     Entity player, enemy, item;
     double value;
@@ -102,9 +109,9 @@ int main(){
 
     cout << "PART B : " << endl;
     cout << "By using directive for physics " << endl;
-    cout << "Enter Velocity value to clamp" << endl;
+    cout << "Enter Velocity value to clamp where min is 20 max is 100" << endl;
     cin >> value; 
-    cout<< value <<" clamped to" << clamp(value,20.0,100.0) << endl;
+    cout<< value <<" clamped to " << clamp(value,20.0,100.0) << endl;
 
     cout << "Enter Start value to lerp(Physics)" << endl;
     cin >> startV;
@@ -117,7 +124,7 @@ int main(){
 
     cout << "By :: for game math" << endl;
     cout << "clmap : " << endl;
-    cout << GameMath::clamp(28,20,100) << endl;
+    cout << GameMath::clamp(value,20,100) << endl;
     cout << "lerp : " << endl;
     cout << GameMath::lerp(startV,endV,interpolFact) << endl;
 
@@ -168,6 +175,10 @@ int main(){
     cout << left << setw(10) << " " << setw(20) << "Forest" << " : " << cForest << endl;
     cout << left << setw(10) << " " << setw(20) << "Dungeon" << " : " << cDungeon << endl;
 
+    cout << "Bonus Part : " << endl;
+    cout << "Default Level : " << ::level << endl;
+    cout << "Player Level : " << player.getLevel() << endl;
+    cout << Engine::Audio::playSound("Pokemon") << endl;
     for(int i=0;i<r;i++){
         delete[] arr[i];
     }
