@@ -26,7 +26,10 @@ class Texture{
         }
 
 };
+class Shader{
+g
 
+};
 
 int main(){
     auto text1 = make_unique<Texture>("player_sprite",512,512);
