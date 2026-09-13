@@ -8,7 +8,9 @@ public class ConsoleInput {
 	public static float getFloat() {
 		return Float.parseFloat(getString());
 	}
-	
+	public static double getDouble() {
+		return Double.parseDouble(getString());
+	}
 	public static String getString() {
 		try {
 			//first value
