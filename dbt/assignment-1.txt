@@ -1,0 +1,75 @@
+assignment-1 
+
+
+1)  create database library_management; 
+    use library_management;
+
+2) create table authors (author_id int primary key, name varchar(100),country varchar(50));
+
+3) create table books (book_id int primary key, title varchar(150),author_id int, published_year year,available_copies int,constraint fk_author_id foreign key (author_id) references authors(author_id));
+
+4) create table members (member_id int primary key,name varchar(100),email varchar(100) unique, phone varchar(15));
+
+5) create table borrow_records (record_id int primary key,member_id int,book_id int ,borrow_date date, return_date date, constraint fk_member_id foreign key (member_id) references members(member_id), constraint fk_book_id foreign key (book_id) references books(book_id));
+
+6) alter table books add genre varchar(50);
+
+7) drop table borrow_records; not util q 19
+
+8) insert into authors (author_id, name, country) 
+values
+(1,'jk','uk'),
+(2,'akira toriyama','japan'),
+(3,'oda','japan');
+
+9) insert into books (book_id,title,author_id,published_year,available_copies)
+values
+(1,'database systems',1,2018,10),
+(2,'dbz',2,1989,20),
+(3,'one piece',3,1997,15),
+(4,'dbs',2,2015,20),
+(5,'db',2,1986,12);
+
+10) insert into members (member_id,name,email,phone)
+values 
+(1,'satyam','satyam@gmail.com',1234),
+(2,'ankit','ankit@gmail.com',3456),
+(3,'mitesh','mitesh@gmail.com',6789);
+
+11) insert into borrow_records (record_id, member_id,book_id,borrow_date,return_date)
+values
+(1,1,1,'2026-10-01',null),
+(2,2,1,'2026-09-04','2026-10-10'),
+(3,1,4,'2026-08-11','026-09-10'),
+(4,3,1,'2026-10-09',null);
+
+
+
+12) select * from books where published_year > 2015;
+
+13) already in q3
+
+
+14) select distinct m.member_id,m.name,m.email
+from members m
+join borrow_records br
+on m.member_id = br.member_id
+join books b
+on br.book_id =b.book_id
+where b.title = 'database systems';
+
+15) update books set available_copies = available_copies-1 where book_id=1;
+
+16) delete from borrow_records where member_id=3;
+delete from members where member_id = 3;
+
+17) update books set title = 'dbms' where book_id = 1;
+
+18) select b.title, a.name as author_name from books b join authors a on b.author_id=a.author_id;
+19) delete from books where published_year < 2000;
+
+20) SELECT b.*
+FROM books b
+LEFT JOIN borrow_records br
+    ON b.book_id = br.book_id
+WHERE br.book_id IS NULL;
