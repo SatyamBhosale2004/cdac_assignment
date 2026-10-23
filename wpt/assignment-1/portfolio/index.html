@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Somewhere Between Stations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="train-scene">
+
+    <!-- Layer 1: scenery inside the window -->
+    <video class="window-view"
+           autoplay muted loop playsinline
+           poster="images/train-window.jpg">
+      <source src="videos/train-window.mp4" type="video/mp4">
+    </video>
+
+    <!-- Layer 2: train interior with a transparent window -->
+    <img class="train-interior"
+         src="images/background.png"
+         alt="">
+
+    <!-- Layer 3: sleeping character -->
+    <img class="sleeping-character"
+         src="images/sleeping-character.png"
+         alt="Illustration of a sleeping passenger">
+
+    <!-- Layer 4: interactive handles -->
+    <a class="handle handle-home" href="index.html">
+      <img src="images/handle-home.png" alt="Home">
+    </a>
+    
+<div class="handle-wrap">
+  <a class="handle" href="index.html">
+    <span class="handle-face">
+      <span class="handle-icon">⌂</span>
+      <span>HOME</span>
+    </span>
+  </a>
+</div>
+
+<div class="handle-wrap handle-wrap-menu">
+  <button class="handle" type="button">
+    <span class="handle-face">
+      <span class="handle-icon">☰</span>
+      <span>MENU</span>
+    </span>
+  </button>
+</div>
+
+    <details class="handle-menu">
+      <summary>
+        <img src="images/handle-menu.png" alt="Menu">
+      </summary>
+
+      <nav class="menu-panel" aria-label="Main navigation">
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+      </nav>
+    </details>
+
+    <!-- Content that appears inside the window -->
+    <section class="window-content">
+      <p class="eyebrow">A PERSONAL PORTFOLIO</p>
+      <h1>Somewhere, between stations.</h1>
+      <p>Building things, collecting ideas, figuring it out.</p>
+    </section>
+
+  </main>
+</body>
+</html>

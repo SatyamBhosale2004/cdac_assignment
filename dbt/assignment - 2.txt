@@ -1,0 +1,67 @@
+assignment - 2
+
+
+-- Q1 create tables with constraints
+CREATE TABLE dept2 (DeptID INT PRIMARY KEY, DeptName VARCHAR(30) NOT NULL, Location VARCHAR(30));
+CREATE TABLE emp2 (EmpID INT PRIMARY KEY, EmpName VARCHAR(40) NOT NULL, Salary DECIMAL(10,2) CHECK (Salary >= 0),
+                   DeptID INT, JoiningDate DATE, FOREIGN KEY (DeptID) REFERENCES dept2(DeptID));
+-- Q2 add column
+ALTER TABLE emp2 ADD COLUMN City VARCHAR(30);
+-- Q3 insert many rows
+INSERT INTO dept2 VALUES (10,'Sales','Mumbai'),(20,'IT','Pune'),(30,'HR','Delhi');
+INSERT INTO emp2 VALUES (1,'Amit',60000,10,'2020-03-15','Mumbai'),(2,'Priya',45000,20,'2021-07-01','Pune'),
+(3,'Rahul',52000,10,'2019-11-20','Mumbai'),(4,'Aman',30000,30,'2022-01-10','Delhi'),(5,'Kiran',75000,20,'2020-09-05','Pune');
+-- Q5 update salary where id = 5
+UPDATE emp2 SET Salary = 80000 WHERE EmpID = 5;
+
+q6
+grant select on assignment.emp2 to 'readonly_user'@'localhost';
+
+q7
+revoke insert on assignment.emp2 to 'readonly_user'@'localhost';
+
+
+q8
+start transaction
+
+insert into emp2 (empid,empname,salary,deptid,joiningdate)
+values
+(6,'satyam',89000,20,'2004-02-08');
+
+commit;
+
+q9
+START TRANSACTION; UPDATE emp2 SET Salary = 70000 WHERE EmpID = 1; COMMIT;
+-- Q10, Q11 savepoint and rollback to it
+START TRANSACTION; SAVEPOINT sp1; UPDATE emp2 SET DeptID = 30 WHERE EmpID = 2; ROLLBACK TO sp1; COMMIT;
+-- Q13 salary above 50000
+SELECT * FROM emp2 WHERE Salary > 50000;
+
+q14
+update emp2 set salary = salary + salary*0.1 where deptid = 10;
+
+q15
+select  deptid,count(*) as total from emp2 group by deptid;
+
+q16
+select d.deptname from dept2 d left join emp2 e on d.deptid = e.deptid where e.empid is null;
+
+create view salespeople_mum as select * from emp2 where city = 'mumbai';
+
+q17
+select max(salary) from emp2;
+
+q18
+select max(salary) from emp2 where salary < (select max(salary) from emp2);
+
+q19
+select *from emp2 order by joiningdate desc;
+
+q20
+alter table dept2 rename column deptname to departmentname;
+
+q4
+delete from emp2;
+
+q12
+truncate table emp2;

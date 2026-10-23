@@ -1,0 +1,66 @@
+assignment 3
+
+q1
+select sum(salary) from employees;
+
+
+q2 
+select deptid, avg(salary) from emp group by deptid;
+
+q3
+select deptid, count(*) from emp group by deptid;
+
+q4
+select d.deptname from department d group by deptid having count(*) > 5;
+
+q5
+select distinct locations from dept;
+
+q6
+select max(salary) from emp and select count(*) from emp;
+
+q7
+select empname from employee 
+where empname like 'a%';
+
+q8
+%n
+
+q9
+%ra%
+
+q10
+select * from employee order by salary desc;
+
+q11
+select * from employee order by deptid asc,salary desc;
+
+q12
+select * from employee where salary between 30k and 60k;
+
+q13
+select * from employee where deptid in (10,20,30);
+
+q14
+select min(salary) as min_sal from employee;
+
+q15
+select * from employee where jd between 2020-01-01 and 2021-12-31;
+
+q16
+select * from employee where salary is null;
+
+q17
+not null;
+
+q18
+select deptid,sum(salary) as total_sal
+from employee
+group by deptid
+having sum(salary) > 100000;
+
+q19
+select distinct empname from employee;
+
+q20
+select loca,count(*) as deptcount from dept group by location;

@@ -1,0 +1,39 @@
+assignment 4
+
+
+q1
+emp x dept
+
+q2
+select e.empname, d.deptname
+from employee e
+inner join department on d.dpetid = e.deptid;
+
+q15
+select e.empname, m.empname as manager;
+from employee e
+left join employee m on e.managerid = m.empid;
+
+
+assignment 5
+
+q1
+delimiter //
+create procedure check_e_odd(in num int)
+begin 
+	if mod(num,2) = 0 then
+	select 'even 'as result
+
+	else
+	select dm for first seadon;
+	end_if;
+delimiter;
+
+call check_e_odd(25);
+
+
+calc si
+
+delimiter //
+create procedure calc_reslt(
+	in princripal

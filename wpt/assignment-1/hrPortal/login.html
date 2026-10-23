@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale=1.0">
+        <title>Hr portal</title>
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="title">Hr portal</div>
+            <div id="nav-elem">
+                <a href = "login.html" style="text-decoration:none;">Login</a>
+                <a href = "directory.html" style="text-decoration:none;">Directory</a>
+                <a href = "onboarding.html" style="text-decoration:none;">Onboarding</a>
+            </div>
+        </nav>
+        <form action ="/login" method = "get" class = "login-card">
+            <div id = "card">
+                <h2>Login Form</h2>
+                <label for ="username">User name</label>
+                <input id ="username" name ="username" type = "text" required minlength = "3">
+                <label for = "password" >Password</label>
+                <input id = "password" name = "password" type = "password" required>
+                <button type ="submit" id ="submitbtn">Submit</button>
+                <a href = "#" class = "need-account" style ="text-decoration:none;">Need an account? Sign Up</a>
+            </div>
+        </form>
+    </body>
+</html>

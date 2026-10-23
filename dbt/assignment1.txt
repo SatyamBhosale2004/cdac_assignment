@@ -1,0 +1,69 @@
+assignment
+
+1 
+q1
+create database library_management;
+
+q2
+create table authors (author_id int primary key , name varchar(100), country varchar(50));
+
+q3
+create table books (book_id int primary key , title varchar(150), published_year year, available_copies int, author_id int, constraint fk_author_id foreign key (author_id) references authors(author_id));
+
+q4
+create table members (member_id int primary key , name varchar(100), email varchar(100) unique , phone varchar(15));
+q5
+create table borrow_records (record_id int primary key , member_id int , book_id int , borrow_date date, return_date date, constraint fk_member_id foreign key (member_id) references members(member_id), constraint fk_book_id foreign key (book_id) references books (book_id));
+
+q6
+alter table books add column genre varchar(50);
+q7
+drop table borrow_records;
+
+create table borrow_records (record_id int primary key , member_id int , book_id int , borrow_date date, return_date date, constraint fk_member_id foreign key (member_id) references members(member_id), constraint fk_book_id foreign key (book_id) references books (book_id));
+
+q8
+INSERT INTO authors VALUES (1,'Henry Korth','USA'),(2,'Shamkant Navathe','India'),(3,'Ramez Elmasri','Egypt');
+
+q9
+INSERT INTO books (book_id,title,author_id,published_year,available_copies) VALUES
+(1,'Database Systems',1,2018,5),(2,'Operating Systems',2,2012,3),(3,'Data Structures',3,2016,4),
+(4,'Networks',1,1998,2),(5,'Algorithms',2,2020,6);
+
+q10
+INSERT INTO members VALUES (1,'Amit','amit@x.com','9000000001'),(2,'Priya','priya@x.com','9000000002'),(3,'Rahul','rahul@x.com','9000000003');
+q11
+INSERT INTO borrow_records VALUES (1,1,1,'2024-01-10',NULL),(2,2,1,'2024-02-05','2024-02-20'),(3,1,3,'2024-03-01',NULL),(4,3,5,'2024-03-15',NULL);
+
+q12
+select * from books where published_year > 2015;
+
+
+q13
+alter table books add constraint fk_books_author foreign key (author_id) references authors(author_id);
+
+q14
+select distinct m.name
+from members m
+join borrow_records br on m.member_id = br.member_id
+join books b on br.book_id = b.book_id
+where b.title = 'database systems';
+
+q15
+update books set available_copies = available_copies-1 where book_id = 1;
+
+q16
+delete from borrow_records where member_id = 3;
+delete from members where member_id = 3;
+
+q17
+update books set title = 'new_name' where book_id = 1;
+
+q18
+select b.title,a.name as author  from books b join authors a on b.author_id = a.author_id;
+
+q19
+delete from books where published_year < 2000;
+
+q20
+select b.title,b.published_year,b.available_copies from books b left join borrow_records br on b.book_id = br.book_id where br.record_id is null;

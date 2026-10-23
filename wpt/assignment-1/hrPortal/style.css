@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  
+  background-color: #99ccff;
+  border: 4px solid #f2ece1;
+  border-radius: 20px;
+  margin: auto;
+  padding: 30px;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0034d3 20%, #003087 30%, #99ccff 100%);
+  margin: 0;
+  background-color: #0034d3;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  color:#0034d3;
+}
+
+#card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#submitbtn{
+    background-color:#0034d3;
+    border:none;
+    transition: background-color 0.2s ease-in-out;
+    color:#f2ece1;
+}
+#submitbtn:hover{
+    background-color:#003087;
+}
+
+.navbar{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    color:#f2ece1;
+    margin-bottom:40px;
+    align-items:center;
+}
+.navbar .title {
+    font-weight: bold;
+    font-size:18px;
+}
+#nav-elem{
+    display:flex;
+    gap:15px;
+}
+
+#nav-elem a {
+    color:#f2ece1;
+    transition:color 0.2s ease-in-out;
+}
+
+#nav-elem a:hover{
+    color:#003087;
+}
+
+.employee-table{
+    color:#f2ece1;
+}
+.total-count{
+    color:#f2ece1;
+}
+
+#onboarding-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    color:#f2ece1;
+}
