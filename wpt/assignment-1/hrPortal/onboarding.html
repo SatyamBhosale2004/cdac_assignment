@@ -17,93 +17,109 @@
     </nav>
     <form class="onboarding" action="/onboarding" method="post">
       <div id="onboarding-form">
-        <label for="full-name">Full Name</label>
-        <input type="text" placeholder="full name" required />
+        <div id="form-fields">
+          <label for="full-name">Full Name</label>
+          <input type="text" placeholder="full name" required />
 
-        <label for="offical-email">Email</label>
-        <input type="email" required />
+          <label for="offical-email">Email</label>
+          <input type="email" required />
 
-        <label for="temporary-password">Password</label>
-        <input type="password" required />
+          <label for="temporary-password">Password</label>
+          <input type="password" required />
 
-        <label for="date-of-birth">DOB</label>
-        <input type="date" required />
+          <label for="date-of-birth">DOB</label>
+          <input type="date" required />
 
-        <label for="joining-date">Joining Date</label>
-        <input type="date" required />
+          <label for="joining-date">Joining Date</label>
+          <input type="date" required />
 
-        <label for="orientation-slot">Orientation slot</label>
-        <input type="datetime-local" required />
+          <label for="orientation-slot">Orientation slot</label>
+          <input type="datetime-local" required />
 
-        <label for="reporting-time">Reporting time</label>
-        <input type="time" required />
+          <label for="reporting-time">Reporting time</label>
+          <input type="time" required />
 
-        <label for="gender">Gender</label>
-        <div id="radio">
-          <input
-            type="radio"
-            id="male"
-            name="gender"
-            value="male"
+          <label for="gender">Gender</label>
+          <div id="radio">
+            <input
+              type="radio"
+              id="male"
+              name="gender"
+              value="male"
+              required
+            /><label>Male</label>
+            <input
+              type="radio"
+              id="female"
+              name="gender"
+              value="female"
+              required
+            /><label>Female</label>
+            <input
+              type="radio"
+              id="other"
+              name="gender"
+              value="other"
+              required
+            /><label>Other</label>
+          </div>
+
+          <label for="highest-qualification" required
+            >highest Qualification</label
+          >
+          <select id="highest-qual" name="qualification" required>
+            <option value="">Select Qualification</option>
+            <option value="bachelors">Bachelor's</option>
+            <option value="masters">Master's</option>
+            <option value="phd">PHD</option>
+          </select>
+
+          <label for="department">Department</label>
+          <select id="department" name="dept" required>
+            <option value="">Select department</option>
+            <option value="it">IT</option>
+            <option value="elec">Elec</option>
+            <option value="management">Management</option>
+            <option value="commerce">Commerce</option>
+          </select>
+
+          <label for="current-address">Current Address</label>
+          <textarea
+            id="curr-address"
+            name="address"
+            rows="4"
             required
-          /><label>Male</label>
+          ></textarea>
+
+          <label for="passport-pic-or-resume">Pic or resume</label>
           <input
-            type="radio"
-            id="female"
-            name="gender"
-            value="female"
+            type="file"
+            id="passport-or-resume"
+            name="document-upload"
             required
-          /><label>Female</label>
-          <input
-            type="radio"
-            id="other"
-            name="gender"
-            value="other"
-            required
-          /><label>Other</label>
+          />
+          <div id="declaration-field">
+            <label for="declaration">Declaration</label>
+            <input type="checkbox" id="declaration" required />
+          </div>
         </div>
 
-        <label for="highest-qualification" required
-          >highest Qualification</label
-        >
-        <select id="highest-qual" name="qualification" required>
-          <option value="">Select Qualification</option>
-          <option value="bachelors">Bachelor's</option>
-          <option value="masters">Master's</option>
-          <option value="phd">PHD</option>
-        </select>
-
-        <label for="department">Department</label>
-        <select id="department" name="dept" required>
-          <option value="">Select department</option>
-          <option value="it">IT</option>
-          <option value="elec">Elec</option>
-          <option value="management">Management</option>
-          <option value="commerce">Commerce</option>
-        </select>
-
-        <label for="current-address">Current Address</label>
-        <textarea id="curr-address" name="address" rows="4" required></textarea>
-
-        <label for="passport-pic-or-resume">Pic or resume</label>
-        <input
-          type="file"
-          id="passport-or-resume"
-          name="document-upload"
-          required
-        />
-
-        <label for="declaration">Declaration</label>
-        <input type="checkbox" id="declaration" required />
-      </div>
-
-      <div class="form-btns">
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
-        <button type="button" id="help">Need help?</button>
+        <div class="form-btns">
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+          <button type="button" id="help">Need help?</button>
+        </div>
       </div>
     </form>
-    <h3>Local office</h3>
-    <iframe src="https://google.com/maps/embed" width="100%" height="300" style="border:0" allowedfullscreen loading = "lazy" referrerpolicy = "no-referrer-when-downgrade"></iframe>
+    <h3 style="color: #f2ece1">Local office</h3>
+    <iframe
+      src="https://google.com/maps/embed"
+      width="100%"
+      height="300"
+      style="border: 0"
+      allowedfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
   </body>
 </html>

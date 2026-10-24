@@ -74,9 +74,37 @@ body {
     color:#f2ece1;
 }
 
+/* #form-fields{
+    display:flex;
+    flex-direction:column;
+} */
+
+
+.onboarding{
+    background-color: #f2ece1;
+    display:flex;
+    flex-direction:column;
+    padding:30px;
+    margin:auto;
+    width:500px;
+}
+
 #onboarding-form{
     display:flex;
     flex-direction:column;
+}
+
+#form-fields{
+    display:flex;
+    flex-direction:column;
     gap:15px;
-    color:#f2ece1;
+}
+#declaration-field{
+    display:flex;
+    gap:15px;
+    margin-bottom:10px;
+}
+
+#form-btns{
+    display:flex;
 }
