@@ -1,4 +1,4 @@
-
+/* 
 * {
   box-sizing: border-box;
 }
@@ -19,7 +19,7 @@ body {
   background: #101725;
 }
 
-/* The scenery is behind the window frame. */
+
 .window-view {
   position: absolute;
   left: 17%;
@@ -30,7 +30,7 @@ body {
   z-index: 1;
 }
 
-/* This image needs a transparent window opening. */
+
 .train-interior {
   position: absolute;
   inset: 0;
@@ -41,12 +41,12 @@ body {
   pointer-events: none;
 }
 
-/* Place your character over the seat on the left. */
 
 
 
 
-/* Make the illustrated handles clickable. */
+
+
 .handle {
   position: absolute;
   top: 4%;
@@ -68,7 +68,7 @@ body {
   right: 15%;
 }
 
-/* Remove the browser's default disclosure marker. */
+
 .handle-menu summary {
   list-style: none;
   cursor: pointer;
@@ -100,7 +100,7 @@ body {
   color: #ff9b8e;
 }
 
-/* Keep text away from the character. */
+
 .window-content {
   position: absolute;
   z-index: 4;
@@ -130,7 +130,7 @@ body {
   z-index: 10;
 }
 
-/* The hanging strap above the handle */
+
 .handle-wrap::before {
   content: "";
   position: absolute;
@@ -144,7 +144,7 @@ body {
   border-radius: 8px 8px 3px 3px;
 }
 
-/* The outer handle creates the coral outline */
+
 .handle {
   position: relative;
   display: block;
@@ -157,7 +157,7 @@ body {
   text-decoration: none;
   cursor: pointer;
 
-  /* Wide upper area, tapered rounded-looking base */
+
   clip-path: polygon(
     22% 0, 78% 0, 100% 72%,
     95% 88%, 83% 100%, 17% 100%,
@@ -165,7 +165,7 @@ body {
   );
 }
 
-/* The inner navy face */
+
 .handle-face {
   position: absolute;
   inset: 5px;
@@ -194,7 +194,7 @@ body {
   outline-offset: 5px;
 }
 
-/* Put Menu on the opposite side */
+
 .handle-wrap-menu {
   left: auto;
   right: 17%;
@@ -203,4 +203,5 @@ body {
 .handle-wrap-menu .handle {
   width: 100%;
   font: inherit;
-}
+} */
+

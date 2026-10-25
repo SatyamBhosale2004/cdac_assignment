@@ -47,7 +47,7 @@ body {
   gap: 20px;
   align-items: center;
   justify-content: left-start;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
 }
 #left-nav,
@@ -77,7 +77,7 @@ body {
 }
 
 .CTA-nav {
-  width: 120px;
+  width: 140px;
   height: 40px;
   font-size: 20px;
   font-weight: 600;
