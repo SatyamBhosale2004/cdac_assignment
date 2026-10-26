@@ -1,52 +1,4 @@
 /* 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: #101725;
-  font-family: Arial, sans-serif;
-  color: #fff;
-}
-
-.train-scene {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  height: 100svh;
-  overflow: hidden;
-  background: #101725;
-}
-
-
-.window-view {
-  position: absolute;
-  left: 17%;
-  top: 23%;
-  width: 68%;
-  height: 52%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-
-.train-interior {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-  z-index: 2;
-  pointer-events: none;
-}
-
-
-
-
-
-
-
 .handle {
   position: absolute;
   top: 4%;
@@ -205,3 +157,83 @@ body {
   font: inherit;
 } */
 
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  font-family:"DM Sans",sans-serif;
+  color:#fff;
+}
+.home {
+  font-family: "Volkhov", serif;
+}
+
+button,input {
+  font-family: inherit;
+}
+
+#train{
+  position:relative;
+  width:100%;
+  min-height:100svh;
+  overflow:hidden;
+}
+
+.bg-train{
+  width:100%;
+  height:100%;
+  position:absolute;
+  inset:0;
+  object-fit:cover;
+  z-index:0;
+}
+
+.content{
+  position:absolute;
+  text-align:center;
+  top:29%;
+  left:2%;
+  width:100%;
+  z-index:3;
+}
+.content .home{ 
+  font-size:36px;
+  font-weight:700;
+}
+
+.content p{
+  font-size:32px;
+  color:#fff;
+}
+
+.cta-home{
+  width:300px;
+  height:40px;
+  border:none;
+  border-radius:8px;
+  font-size:24px;
+  font-weight:500;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cta-home:hover{
+  background-color:#000;
+  color:#fff;
+
+}
+.train-video{
+  position:absolute;
+  width:73.5%;
+  left:13.6%;
+  object-fit:cover;
+  border-radius:4vw;
+  top:17.5%;
+  z-index:1;
+  display:block;
+  height:51%;
+  clip-path: inset(0 0 0 0.2%);
+}
