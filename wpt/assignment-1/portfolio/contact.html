@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width = device-width, initial-scale=1.0" />
+    <title>Project Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Geist:ital,wght@0,100..900;1,100..900&family=Irish+Grover&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="contact-page">
+    <main id="train">
+      <div id="train-scene"></div>
+      <!-- shared comp -->
+      <div id="window-content">
+        <div id="navbar"></div>
+        <div id="contact-div">
+          <form id="contact-form">
+            <div id="form-name">
+              <label for="user-name">Your Name</label>
+              <input
+                class="user-name"
+                name="name"
+                placeholder="Your Name"
+                type="text"
+                required
+              />
+            </div>
+            <div id="form-email">
+              <label for="user-email">Your email</label>
+              <input
+                class="user-email"
+                name="email"
+                placeholder="Your email"
+                type="email"
+                required
+              />
+            </div>
+            <div id="form-date">
+              <label for="date">Preferred Contact Date</label>
+              <input
+                class="date"
+                name="date"
+                placeholder="Date"
+                type="date"
+                required
+              />
+            </div>
+            <div id="form-enquiry">
+              <label for="enquiry">Enquiry Type</label>
+              <select id="form-enquiry">
+                <option value="Job">Job Offer</option>
+                <option value="connect">Connect</option>
+                <option value="interview    ">Interview Schedule</option>
+              </select>
+            </div>
+            <div id="form-contact-mode">
+              <label for="name">Preferred Contact Mode</label>
+              <label
+                ><input
+                  type="radio"
+                  name="contact-method"
+                  value="email"
+                  checked
+                />Email</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="contact-method"
+                  value="linkedin"
+                  checked
+                />Linkedin</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="contact-method"
+                  value="meet"
+                  checked
+                />Zoom Meet</label
+              >
+            </div>
+            <div id="form-message">
+              <label for="message">Your Message</label>
+              <textarea id="message" name = "message" row="2" required minlength="10"></textarea>
+            </div>
+            <div id="form-cv">
+              <label for="name">Upload CV</label>
+              <input
+                class="cv"
+                name="cv"
+                placeholder="Your CV File in pdf or jpeg"
+                type="file"
+                required
+              />
+            </div>
+            <div id="form-consent">
+              <label for="name">Consent Box</label>
+              <label
+                ><input class="consent" name="consent" type="checkbox" required
+              /></label>
+            </div>
+            <div id="form-btns">
+                <button class="submit-form" type="submit">Submit</button>
+                <button class="reset-form" type="reset">Reset</button>
+            </div>
+          </form>
+          <div id="iframe-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241105.40801230978!2d72.98273738043049!3d19.226973993327228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be796f457b1b76f%3A0x35df463ca445bd26!2sKalyan%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1793041835051!5m2!1sen!2sin" title="map of kalyan" width="822" height="400" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/common.js"></script> 
+    <script src="js/script.js"></script>
+  </body>
+</html>
