@@ -21,9 +21,24 @@
       <section class="content">
         <h1 class="home">Hey, I'm Satyam Bhosale</h1>
         <p>Aspiring SDE, Building things & exploring ideas</p>
-        <button id="cta-home">Get to know me</button>
+        <div id="cta-btns">
+          <button id="cta-home-get-to-know-me">Get to know me</button>
+          <button id="cta-home-say-hello">Say Hello</button>
+        </div>
+        <div id="say-hello">
+          <label class="say-hello-label" for="say-hello-input"
+            >Enter your name</label
+          >
+          <input
+            id="say-hello-input"
+            name="say-hello-input"
+            type="text"
+            minlength="2"
+            placeholder="Your Name"
+          />
+          <button id="welcome-btn" type="button">Welcome Me</button>
+        </div>
       </section>
-
     </main>
     <script src="js/script.js"></script>
     <script src="js/common.js"></script>
