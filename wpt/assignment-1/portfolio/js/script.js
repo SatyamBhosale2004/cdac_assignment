@@ -40,7 +40,124 @@ if (welcomeBtn) {
   });
 }
 
-const lightMode = document.getElementById("light-mode");
-lightMode.addEventListener("click", () => {
-  
+const showSkillBtn = document.getElementById("show-skills");
+const skills = document.getElementById("skills");
+if(showSkillBtn){
+  showSkillBtn.addEventListener("click",()=>{
+    if(skills.style.display === "none"){
+      skills.style.display = "block";
+      showSkillBtn.textContent="Hide";
+    }else{
+      skills.style.display="none";
+      showSkillBtn.textContent = "Show";
+    }
+  })
+}
+
+
+
+
+
+
+//dark-light
+let darkMode = true;
+
+document.addEventListener("click", (event) => {
+  const lightMode = event.target.closest("#light-mode");
+
+  if (!lightMode) return;
+
+  const mainBtns = [
+    document.querySelector(".subscribe-btn"),
+    document.querySelector("#about-me-btn"),
+    document.querySelector("#show-skills-btn"),
+    document.querySelector(".submit-form"),
+    document.querySelector(".reset-form"),
+    document.querySelector("#show-skills")
+  ];
+
+  const mainCards = [
+    document.querySelector("#email-field"),
+    document.querySelector("#about-me"),
+    document.querySelector("#left-about"),
+    document.querySelector("#mid-about"),
+    document.querySelector("#right-about"),
+    document.querySelector("#curr-proj-1"),
+    document.querySelector("#curr-proj-2"),
+    document.querySelector("#contact-form")
+  ];
+
+  const tableCells = document.querySelectorAll(
+    "#project-table th, #project-table td"
+  );
+
+  if (darkMode) {
+    document.body.style.backgroundColor = "#fff";
+    document.body.style.color = "#000";
+    // document.border.style.color = "#000";
+
+    mainBtns.forEach((btns) => {
+      if (btns) {
+        btns.style.backgroundColor = "#000";
+        btns.style.color = "#fff";
+
+        btns.onmouseenter = () => {
+          btns.style.backgroundColor = "#ffffff";
+          btns.style.color = "#000000";
+        };
+        btns.onmouseleave = () => {
+          btns.style.backgroundColor = "#000000";
+          btns.style.color = "#ffffff";
+        };
+      }
+    });
+
+    mainCards.forEach((cards) => {
+      if (cards) {
+        cards.style.borderColor = "#000";
+      }
+    });
+
+    tableCells.forEach((cell) => {
+      cell.style.borderColor = "#000000";
+    });
+
+    lightMode.textContent = "Dark Mode";
+    darkMode = false;
+    // document.body.classList.add("light-theme");
+  } else {
+    document.body.style.backgroundColor = "#000";
+    document.body.style.color = "#fff";
+    mainBtns.forEach((btns) => {
+      if (btns) {
+        btns.style.backgroundColor = "#fff";
+        btns.style.color = "#000";
+
+        btns.onmouseenter = () => {
+          btns.style.backgroundColor = "#000";
+          btns.style.color = "#fff";
+        };
+        btns.onmouseleave = () => {
+          btns.style.backgroundColor = "#fff";
+          btns.style.color = "#000";
+        };
+      }
+    });
+
+    mainCards.forEach((cards) => {
+      if (cards) {
+        cards.style.borderColor = "#fff";
+      }
+    });
+
+    tableCells.forEach((cell) => {
+      cell.style.borderColor = "#fff";
+    });
+
+    lightMode.textContent = "Light Mode";
+    darkMode = true;
+    // document.body.classList.remove("light-theme");
+  }
 });
+
+const showBtn = document.getElementById("showBtn");
