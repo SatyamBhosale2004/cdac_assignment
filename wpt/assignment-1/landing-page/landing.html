@@ -25,9 +25,7 @@
           <a href="#hero-section" style="text-decoration: none">Home</a>
           <a href="#menu-section" style="text-decoration: none">Menu</a>
           <a href="#guide-section" style="text-decoration: none">Guide</a>
-          <a href="#footer-section" style="text-decoration: none"
-            >Contact Us</a
-          >
+          <a href="#footer-section" style="text-decoration: none">Contact Us</a>
         </div>
         <div id="mid-nav">
           <!-- inline css and transform text-->
@@ -118,9 +116,7 @@
             </div>
             <div>
               <h3 class="peach-heading">Peach Affogato</h3>
-              <p>
-                Peach gelato topped with a shot of espresso.
-              </p>
+              <p>Peach gelato topped with a shot of espresso.</p>
               <div class="price">$7.00/-</div>
             </div>
           </div>
@@ -134,23 +130,23 @@
             <h2 class="order-heading">Your Order</h2>
             <div class="order-card">
               <h3>Select Your Dish</h3>
+              <form>
+                <label for="dish-select">Dishes</label>
+                <select id="dish-select">
+                  <option value="">Select a dish</option>
+                </select>
 
-              <label for="dish-select">Dishes</label>
-              <select id="dish-select">
-                <option value="">Select a dish</option>
-              </select>
-
-              <label for="quantity">Quantity</label>
-              <input type="number" id="quantity" name="quantity"  value="1">
-
-              <button  type="button" id="add-to-order">Add to Order</button>
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" value="1" />
+                <button type="button" id="add-to-order">Add to Order</button>
+              </form>
             </div>
 
-            <div class="order-card">
+            <div class="order-card" id="">
               <h3>Your Items</h3>
-              <div id="order-list"><p>Your Order Is Empty</p></div>
+              <div id="order-list"><p id="order-empty-text">Your Order Is Empty</p></div>
             </div>
-            <div class="order-card">
+            <div class="order-card" id="deliveryDiv">
               <h3>Delivery</h3>
               <label>Delivery Location</label>
               <select id="delivery-select">
@@ -160,6 +156,7 @@
           </div>
           <div id="right-order">
             <h2 class="bill-heading">Your Bill</h2>
+            <p>Breakdown of your bill</p>
           </div>
         </div>
       </section>
@@ -172,21 +169,22 @@
             <ul id="list-guide">
               <li>
                 <p>
-                  <span style="color:#ffd0ca;">Pick Base:</span> Choose between organic double
-                  espresso, ceremonial matcha, or botanical cold tea.
+                  <span style="color: #ffd0ca">Pick Base:</span> Choose between
+                  organic double espresso, ceremonial matcha, or botanical cold
+                  tea.
                 </p>
               </li>
               <li>
                 <p>
-                  <span style="color:#ffd0ca;">Pick Cream:</span> Choose between standard whole milk,
-                  organic oat milk, or house coconut cream.
+                  <span style="color: #ffd0ca">Pick Cream:</span> Choose between
+                  standard whole milk, organic oat milk, or house coconut cream.
                 </p>
               </li>
               <li>
                 <p>
-                  <span style="color:#ffd0ca;">Pick Sweetness:</span> Adjust flavor notes using
-                  zero-sugar stevia, raw organic honey, or vanilla bean cane
-                  syrup.
+                  <span style="color: #ffd0ca">Pick Sweetness:</span> Adjust
+                  flavor notes using zero-sugar stevia, raw organic honey, or
+                  vanilla bean cane syrup.
                 </p>
               </li>
             </ul>
@@ -195,14 +193,22 @@
             <h3 class="guide-header">Timings & Sunsets</h3>
             <ul class="timing-list">
               <li>
-                <strong style="color:#ea717b; font-weight:700;">Sunup Brews (Mon - Fri):</strong> 7:00 AM - 12:00 PM
+                <strong style="color: #ea717b; font-weight: 700"
+                  >Sunup Brews (Mon - Fri):</strong
+                >
+                7:00 AM - 12:00 PM
               </li>
               <li>
-                <strong style="color:#ea717b; font-weight:700;">Sunset Sessions (Mon - Fri):</strong> 4:00 PM - 9:00 PM
+                <strong style="color: #ea717b; font-weight: 700"
+                  >Sunset Sessions (Mon - Fri):</strong
+                >
+                4:00 PM - 9:00 PM
               </li>
               <li>
-                <strong style="color:#ea717b; font-weight:700;">Weekend Solstice (Sat & Sun):</strong> 8:00 AM - 10:00
-                PM
+                <strong style="color: #ea717b; font-weight: 700"
+                  >Weekend Solstice (Sat & Sun):</strong
+                >
+                8:00 AM - 10:00 PM
               </li>
             </ul>
           </div>
@@ -217,11 +223,11 @@
         </div>
         <div id="footer-mid">
           <h4>Address: That Street</h4>
-          
+
           <h4>Phone No: 1234</h4>
         </div>
         <div id="footer-right">
-            <img src="images/footer.jpg" alt="footer" class="footer-img">
+          <img src="images/footer.jpg" alt="footer" class="footer-img" />
         </div>
       </div>
     </footer>
