@@ -5,9 +5,12 @@ const menu = [
   { id: 4, name: "Blueberry Mint Fizz", price: 6 },
   { id: 5, name: "Matcha Vanilla Chiller", price: 8 },
 ];
-const orderCardDiv = document.querySelector("#deliveryDiv");
+const orderMessage = document.querySelector("#order-message");
+const orderButtonContainer = document.querySelector("#order-button");
 const orderedItemsDiv = document.getElementById("order-list");
+const billBreakDownDiv = document.getElementById("bill-breakdown");
 const dishSelect = document.querySelector("#dish-select");
+
 let subTotal = 0;
 let deliveryCharge = 0;
 let discount = 0;
@@ -78,7 +81,7 @@ addToOrderBtn.addEventListener("click", () => {
       if (totalPriceForOrderedItems === 0)
         orderEmptyText.textContent = "Your Order Is Empty";
       else orderEmptyText.textContent = "";
-      
+      calculateDiscount();
       return totalPriceForOrderedItems;
     });
   }
@@ -87,14 +90,20 @@ addToOrderBtn.addEventListener("click", () => {
   if (totalPriceForOrderedItems === 0)
     orderEmptyText.textContent = "Your Order Is Empty";
   else orderEmptyText.textContent = "";
+  function calculateDiscount() {
+    if (totalPriceForOrderedItems >= 80) {
+      discount = totalPriceForOrderedItems * 0.15;
+    } else if (totalPriceForOrderedItems >= 50) {
+      discount = totalPriceForOrderedItems * 0.1;
+    } else if (totalPriceForOrderedItems >= 25) {
+      discount = totalPriceForOrderedItems * 0.05;
+    } else {
+      discount = 0;
+    }
 
-  if (totalPriceForOrderedItems >= 80) {
-    discount = totalPriceForOrderedItems * 0.15;
-  } else if (totalPriceForOrderedItems >= 50) {
-    discount = totalPriceForOrderedItems * 0.1;
-  } else if (totalPriceForOrderedItems >= 25) {
-    discount = totalPriceForOrderedItems * 0.05;
+    return discount;
   }
+  calculateDiscount();
   return {total: totalPriceForOrderedItems, discount: discount};
 });
 
@@ -153,7 +162,7 @@ if (deliverySelect) {
 }
 const placeOrderBtn = document.createElement("button");
 placeOrderBtn.textContent = "Place Order";
-orderCardDiv.appendChild(placeOrderBtn);
+orderButtonContainer.appendChild(placeOrderBtn);
 
 function orderLogic() {
   const accumaltedPrices = [
@@ -180,22 +189,53 @@ function placingOrder(){
     });
 }
 const orderPlaceText = document.createElement("p");
-
-
+const orderedItemsText = document.createElement("p");
+const deliveryChargeText = document.createElement("p");
+const discountText = document.createElement("p");
+const subTotalText = document.createElement("p");
+const billItemsDiv = document.getElementById("bill-items");
 if (placeOrderBtn) {
   placeOrderBtn.addEventListener("click", async () => {
-    
-    if (!deliverySelect.value) {
-      alert("Add the delivery location please before placing the order");
-      return;
-    }
+
+  if (cart.length === 0) {
+    billItemsDiv.replaceChildren();
+
+    const emptyBillText = document.createElement("p");
+    emptyBillText.textContent = "No items to display";
+    billItemsDiv.appendChild(emptyBillText);
+
+    orderPlaceText.textContent = "Your cart is empty";
+    orderMessage.replaceChildren(orderPlaceText);
+
+    totalPriceForOrderedItems = 0;
+    discount = 0;
+    subTotal = 0;
+
+    return;
+  }
+
+  if (!deliverySelect.value) {
+    alert("Add the delivery location please before placing the order");
+    return;
+  }
     orderPlaceText.textContent = "Placing Order";
-    orderCardDiv.appendChild(orderPlaceText);
+    orderMessage.appendChild(orderPlaceText);
     placeOrderBtn.disabled = true;
     try {
       const orderNo = await placingOrder();
       orderLogic();
       orderPlaceText.textContent = `Order Placed Successfully Order No is ${orderNo}`;
+      orderedItemsText.textContent = `Ordered Items : $${totalPriceForOrderedItems}`;
+      deliveryChargeText.textContent = `Delivery Charge : $${deliveryCharge}`;
+      discountText.textContent = `Discount : $${discount}`;
+      subTotalText.textContent = `Subtotal : $${subTotal}`;
+
+      billItemsDiv.replaceChildren(
+        orderedItemsText,
+        deliveryChargeText,
+        discountText,
+        subTotalText
+      );
     } catch (error) {
       orderPlaceText.textContent = error;
     } finally {

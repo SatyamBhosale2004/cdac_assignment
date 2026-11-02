@@ -24,6 +24,7 @@
         <div id="left-nav">
           <a href="#hero-section" style="text-decoration: none">Home</a>
           <a href="#menu-section" style="text-decoration: none">Menu</a>
+          <a href="#order-section" style="text-decoration: none">Order</a>
           <a href="#guide-section" style="text-decoration: none">Guide</a>
           <a href="#footer-section" style="text-decoration: none">Contact Us</a>
         </div>
@@ -34,7 +35,9 @@
           </h2>
         </div>
         <div id="right-nav">
-          <button class="CTA-nav">Order Now</button>
+          <a href="#order-section">
+  <button class="CTA-nav">Order Now</button>
+</a>
         </div>
       </div>
     </nav>
@@ -53,7 +56,9 @@
             Stop by today to catch the warm morning rays on our open deck or
             grab a refreshing splash to go.
           </p>
-          <button class="hero-btn">Order Now</button>
+          <a href="#order-section">
+  <button class="hero-btn">Order Now</button>
+</a>
         </div>
       </div>
     </header>
@@ -130,7 +135,7 @@
             <h2 class="order-heading">Your Order</h2>
             <div class="order-card">
               <h3>Select Your Dish</h3>
-              <form>
+              <form id="menu-form">
                 <label for="dish-select">Dishes</label>
                 <select id="dish-select">
                   <option value="">Select a dish</option>
@@ -144,19 +149,38 @@
 
             <div class="order-card" id="">
               <h3>Your Items</h3>
-              <div id="order-list"><p id="order-empty-text">Your Order Is Empty</p></div>
+              <div id="order-list">
+                <p id="order-empty-text">Your Order Is Empty</p>
+              </div>
             </div>
-            <div class="order-card" id="deliveryDiv">
+            <div class="order-card">
               <h3>Delivery</h3>
-              <label>Delivery Location</label>
-              <select id="delivery-select">
-                <option value="">Select Location</option>
-              </select>
+              <div id="deliveryDiv">
+                <div id="delivery-controls">
+                  <label for="delivery-select">Delivery Location</label>
+                  <select id="delivery-select">
+                    <option value="">Select Location</option>
+                  </select>
+                </div>
+
+                <div id="order-action">
+                  <div id="order-button"></div>
+                  <div id="order-message"></div>
+                </div>
+              </div>
             </div>
           </div>
+
           <div id="right-order">
             <h2 class="bill-heading">Your Bill</h2>
-            <p>Breakdown of your bill</p>
+
+            <div id="bill-breakdown">
+              <h3>Sol & Sip</h3>
+              <p class="bill-intro">Order Receipt</p>
+
+              <div id="bill-items">
+              </div>
+            </div>
           </div>
         </div>
       </section>
